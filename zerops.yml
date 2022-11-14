@@ -1,0 +1,11 @@
+app:
+  build:
+    base:
+      - nodejs@16
+    build:
+      - npm ci --production
+      - npm run download-dist
+    deploy:
+      - ./
+  run:
+    start: node server/server.js
